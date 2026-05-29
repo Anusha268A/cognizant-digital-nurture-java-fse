@@ -12,4 +12,4 @@ This repository contains exercises, assignments, and projects completed during t
 - Full Stack Development
 
 ## Author
-Ay Shu
+Anusha Ajmeera
