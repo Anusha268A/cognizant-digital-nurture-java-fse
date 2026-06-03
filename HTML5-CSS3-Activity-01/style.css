@@ -9,9 +9,6 @@
 body{
     font-family:'Poppins',sans-serif;
     background:#f4f4f4;
-    background-image:url("images/background.jpg");
-    background-size:cover;
-    background-attachment:fixed;
     color:#333;
     padding:20px;
 }
@@ -31,6 +28,7 @@ nav{
 
 nav ul{
     list-style:none;
+    text-align:center;
 }
 
 nav li{
@@ -63,7 +61,7 @@ nav a:visited{
     margin-top:10px;
 }
 
-/* Highlight */
+/* Highlight Text */
 .highlight{
     background:yellow;
     padding:5px;
@@ -97,6 +95,11 @@ table{
     margin-top:20px;
 }
 
+th{
+    background:#4facfe;
+    color:white;
+}
+
 th,td{
     border:1px solid #ddd;
     padding:10px;
@@ -115,7 +118,7 @@ tr:nth-child(even){
     transition:0.3s;
 }
 
-/* Form */
+/* Form Styling */
 form{
     width:50%;
     background:white;
@@ -143,6 +146,11 @@ button{
     cursor:pointer;
 }
 
+button:hover{
+    background:#4facfe;
+    color:white;
+}
+
 /* Multi-column Layout */
 .newsArticle{
     column-count:2;
@@ -151,7 +159,7 @@ button{
     margin-top:20px;
 }
 
-/* Hidden vs None */
+/* Visibility Demo */
 .hiddenElement{
     visibility:hidden;
 }
@@ -196,5 +204,9 @@ footer{
 
     h2{
         font-size:18px;
+    }
+
+    .newsArticle{
+        column-count:1;
     }
 }

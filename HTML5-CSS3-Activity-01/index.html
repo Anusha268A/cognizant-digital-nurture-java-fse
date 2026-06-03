@@ -1,30 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Community Event Portal</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1 id="mainHeader" style="color:red;">
-    Local Community Event Portal
-</h1>
+
+    <h1 id="mainHeader" style="color:red;">
+        Local Community Event Portal
+    </h1>
+
     <!-- Navigation -->
     <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="help.html">Help</a></li>
-    </ul>
-</nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="help.html" target="_blank">Help</a></li>
+        </ul>
+    </nav>
 
-    <!-- Main -->
+    <!-- Home Section -->
     <section id="home">
+
         <div id="welcomeBanner">
             Welcome Resident!
             <span style="color:red;font-weight:bold;">
@@ -35,14 +40,43 @@
         <p class="highlight">
             Stay updated with upcoming community events.
         </p>
-    </section>
-    
 
+    </section>
+
+    <!-- Event Cards -->
+    <section>
+
+        <h2>Featured Events</h2>
+
+        <div class="eventCard">
+            <h3>Music Festival</h3>
+            <p>
+                Enjoy live performances and entertainment from local artists.
+            </p>
+        </div>
+
+        <div class="eventCard">
+            <h3>Food Fair</h3>
+            <p>
+                Explore delicious cuisines and community food stalls.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Events Section -->
     <section id="events">
-      
+
         <h2>Community Event Gallery</h2>
 
-        <table border="1">
+        <table>
+
+            <tr>
+                <th>Event 1</th>
+                <th>Event 2</th>
+                <th>Event 3</th>
+            </tr>
+
             <tr>
                 <td>
                     <img src="images/music.png"
@@ -106,99 +140,149 @@
                     Tech Meetup
                 </td>
             </tr>
+
         </table>
+
     </section>
 
-    <h2>Event Registration</h2>
+    <!-- Registration Form -->
+    <section>
 
-    <form id="eventForm">
-        <input type="text"
-               id="name"
-               placeholder="Enter Name"
-               required
-               autofocus>
+        <h2>Event Registration</h2>
 
-        <input type="email"
-               placeholder="Enter Email"
-               required>
+        <form id="eventForm">
 
-        <input type="text"
-               id="phone"
-               placeholder="Enter Phone Number"
-               onblur="validatePhone()">
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter Name"
+                required
+                autofocus>
 
-        <input type="date" required>
+            <input
+                type="email"
+                placeholder="Enter Email"
+                required>
 
-        <select id="eventType"
+            <input
+                type="text"
+                id="phone"
+                placeholder="Enter Phone Number"
+                onblur="validatePhone()">
+
+            <input
+                type="date"
+                required>
+
+            <select
+                id="eventType"
                 onchange="showFee();savePreference();">
-            <option value="">Select Event</option>
-            <option value="Music">Music</option>
-            <option value="Sports">Sports</option>
-            <option value="Tech">Tech</option>
-        </select>
 
-        <p id="fee"></p>
+                <option value="">Select Event</option>
+                <option value="Music">Music</option>
+                <option value="Sports">Sports</option>
+                <option value="Tech">Tech</option>
 
-        <textarea id="feedback"
-                  placeholder="Message"
-                  onkeyup="countCharacters()"></textarea>
+            </select>
 
-        <p>Character Count:
-            <span id="count">0</span>
-        </p>
+            <p id="fee"></p>
 
-        <button type="button" onclick="submitForm()">
-            Register
+            <textarea
+                id="feedback"
+                placeholder="Enter your feedback"
+                onkeyup="countCharacters()"></textarea>
+
+            <p>
+                Character Count:
+                <span id="count">0</span>
+            </p>
+
+            <button
+                type="button"
+                onclick="submitForm()">
+                Register
+            </button>
+
+            <output id="confirmation"></output>
+
+        </form>
+
+    </section>
+
+    <!-- Video Section -->
+    <section>
+
+        <h2>Video Invitation</h2>
+
+        <video
+            width="400"
+            controls
+            oncanplay="videoReady()">
+
+            <source src="sample.mp4" type="video/mp4">
+
+        </video>
+
+        <p id="videoMessage"></p>
+
+    </section>
+
+    <!-- Geolocation -->
+    <section>
+
+        <h2>Find Nearby Events</h2>
+
+        <button onclick="findLocation()">
+            Find Nearby Events
         </button>
 
-        <output id="confirmation"></output>
-    </form>
+        <p id="location"></p>
 
-    <h2>Video Invitation</h2>
+        <button onclick="clearPreferences()">
+            Clear Preferences
+        </button>
 
-    <video width="400"
-           controls
-           oncanplay="videoReady()">
-        <source src="sample.mp4" type="video/mp4">
-    </video>
+    </section>
 
-    <p id="videoMessage"></p>
-
-    <h2>Find Nearby Events</h2>
-
-    <button onclick="findLocation()">
-        Find Nearby Events
-    </button>
-
-    <p id="location"></p>
-
-    <button onclick="clearPreferences()">
-        Clear Preferences
-    </button>
-
+    <!-- Contact -->
     <section id="contact">
+
         <h2>Contact</h2>
+
         <p class="highlight">
             Email: community@events.com
         </p>
-    </section>
-    <section>
-    <h2>Community News</h2>
 
-    <div class="newsArticle">
-        The city council has announced several new community initiatives.
-        Residents are encouraged to participate in cultural, sports,
-        technology and environmental programs. These activities help
-        strengthen community engagement and improve local services.
-        Volunteers are welcome to join upcoming projects and workshops.
-    </div>
-</section>
+    </section>
+
+    <!-- Multi Column News -->
+    <section>
+
+        <h2>Community News</h2>
+
+        <div class="newsArticle">
+
+            The city council has announced several new community initiatives.
+            Residents are encouraged to participate in cultural, sports,
+            technology and environmental programs. These activities help
+            strengthen community engagement and improve local services.
+
+            Volunteers are welcome to join upcoming projects and workshops.
+            Community centers will host awareness campaigns, technology
+            meetups, environmental drives, and cultural festivals throughout
+            the year. Citizens are encouraged to actively participate and
+            contribute to local development initiatives.
+
+        </div>
+
+    </section>
+
     <!-- Footer -->
     <footer>
         <p>© 2026 Local Community Event Portal</p>
     </footer>
 
-    <script src="script.js">
-    </script>
+    <script src="script.js"></script>
+
 </body>
 </html>
