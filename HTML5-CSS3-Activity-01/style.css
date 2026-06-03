@@ -1,0 +1,200 @@
+/* Universal Selector */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body Styles */
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f4f4f4;
+    background-image:url("images/background.jpg");
+    background-size:cover;
+    background-attachment:fixed;
+    color:#333;
+    padding:20px;
+}
+
+/* Main Header */
+#mainHeader{
+    text-align:center;
+    padding:20px;
+    color:#ff0000;
+}
+
+/* Navigation */
+nav{
+    background:#333;
+    padding:15px;
+}
+
+nav ul{
+    list-style:none;
+}
+
+nav li{
+    display:inline-block;
+    margin-right:20px;
+}
+
+nav a:link{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:yellow;
+}
+
+nav a:active{
+    color:red;
+}
+
+nav a:visited{
+    color:lightgray;
+}
+
+/* Welcome Banner */
+#welcomeBanner{
+    background:rgba(0,0,255,0.8);
+    color:white;
+    padding:15px;
+    margin-top:10px;
+}
+
+/* Highlight */
+.highlight{
+    background:yellow;
+    padding:5px;
+}
+
+/* Section Headings */
+h2{
+    margin-top:20px;
+    padding:10px;
+    background:linear-gradient(to right,#4facfe,#00f2fe);
+    color:white;
+}
+
+/* Grouping Selector */
+h3,p{
+    line-height:1.6;
+}
+
+/* Event Cards */
+.eventCard{
+    border:2px solid #333;
+    padding:15px;
+    margin:15px 0;
+    background:white;
+}
+
+/* Table Styling */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+/* Images */
+.event-img{
+    width:200px;
+    height:150px;
+    border:3px solid black;
+    transition:0.3s;
+}
+
+/* Form */
+form{
+    width:50%;
+    background:white;
+    padding:20px;
+    border:1px solid #ccc;
+    margin-top:20px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:8px;
+    margin-bottom:10px;
+}
+
+input:focus,
+textarea:focus{
+    outline:3px solid orange;
+}
+
+/* Buttons */
+button{
+    padding:10px;
+    cursor:pointer;
+}
+
+/* Multi-column Layout */
+.newsArticle{
+    column-count:2;
+    column-gap:30px;
+    column-rule:1px solid gray;
+    margin-top:20px;
+}
+
+/* Hidden vs None */
+.hiddenElement{
+    visibility:hidden;
+}
+
+.noneElement{
+    display:none;
+}
+
+/* Footer */
+footer{
+    margin-top:30px;
+    text-align:center;
+    padding:10px;
+    background:#333;
+    color:white;
+}
+
+/* Responsive Design */
+@media screen and (max-width:768px){
+
+    nav li{
+        display:block;
+        margin:10px 0;
+    }
+
+    .event-img{
+        width:120px;
+        height:100px;
+    }
+
+    body{
+        font-size:14px;
+    }
+
+    form{
+        width:100%;
+    }
+
+    h1{
+        font-size:24px;
+    }
+
+    h2{
+        font-size:18px;
+    }
+}
